@@ -14,20 +14,20 @@ Note that any manipulation of the resulting image will likely corrupt the hidden
 ## Features
 
 * Embeds any file type (binary safe) within the LSBs of a cover image.
-* Strong **AES-256-GCM** encryption for confidentiality and data integrity.
-* Robust passphrase protection using **PBKDF2-HMAC-SHA256** with configurable iterations.
-* **Unique salt** generated for each embedding operation, preventing rainbow table attacks.
+* Strong AES-256-GCM encryption for confidentiality and data integrity.
+* Robust passphrase protection using PBKDF2-HMAC-SHA256 with configurable iterations.
+* Unique salt generated for each embedding operation, preventing rainbow table attacks.
 * Extracted files are automatically named `decrypted_<original_filename>`.
-* Command-line interface (`argparse`) for ease of use in scripting.
-* Secure passphrase prompting using `getpass`.
+* Command-line interface for ease of use in scripting.
+* Secure passphrase prompting.
 * Configurable cryptographic parameters via `config.ini`.
 
 ## Requirements
 
 * Python 3.7+
 * Required Python libraries:
-    * `Pillow` (for image manipulation)
-    * `cryptography` (for AES, KDF, hashing)
+    * `Pillow`
+    * `cryptography`
 
 ## Installation
 1.  Clone this repository or download the source files into a single directory.
@@ -38,7 +38,7 @@ Note that any manipulation of the resulting image will likely corrupt the hidden
 ## Usage
 Embedding a File:
 ```bash
-    python steg.py embed -i <cover_image_path> -s <secret_file_path> -o <output_stego_image_path>
+python steg.py embed -i <cover_image_path> -s <secret_file_path> -o <output_stego_image_path>
 ```
 You will then be prompted for a passphrase that will be used for decryption.
 
