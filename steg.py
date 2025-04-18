@@ -366,7 +366,7 @@ def extract_and_save_file(image_path: str, passphrase: str, output_dir: str) -> 
         print(f"An unexpected extraction error occurred: {e}"); return None
 
 
-def main_cli():
+def main():
     parser = argparse.ArgumentParser(
         description="Hide files within images using LSB steganography and AES-GCM encryption.",
         formatter_class=argparse.RawTextHelpFormatter
@@ -432,4 +432,4 @@ Use lossless image formats like PNG for output stego-images.
 
 if __name__ == '__main__':
     load_config()
-    main_cli()
+    main()
