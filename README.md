@@ -1,7 +1,8 @@
 # Encrypted File Steganography Tool
 
-**Version:** 1.0 (As of April 18, 2025)
-**Author:** [Henry Xue/henry0225]
+**Version:** 1.0.1 (As of April 18, 2025)
+**Author:** Henry Xue (henry0225)
+**Status:** Available on [TestPyPI](https://test.pypi.org/project/file-steg/) (for testing)
 
 ## Description
 
@@ -30,15 +31,14 @@ Note that any manipulation of the resulting image will likely corrupt the hidden
     * `cryptography`
 
 ## Installation
-1.  Clone this repository or download the source files into a single directory.
-2.  Install the required libraries:
-    ```bash
-    pip install Pillow cryptography
-    ```
+```bash
+pip install -i https://test.pypi.org/simple/ file-steg==1.0.1
+```
+
 ## Usage
 Embedding a File:
 ```bash
-python steg.py embed -i <cover_image_path> -s <secret_file_path> -o <output_stego_image_path>
+file-steg embed -i <cover_image_path> -s <secret_file_path> -o <output_stego_image_path>
 ```
 You will then be prompted for a passphrase that will be used for decryption.
 
@@ -52,7 +52,7 @@ Arguments:
 
 Extracting a File
 ```bash
-python steg.py extract -i <stego_image_path> -d <output_directory_path>
+file-steg extract -i <stego_image_path> -d <output_directory_path>
 ```
 You will then be prompted for the passphrase.
 
