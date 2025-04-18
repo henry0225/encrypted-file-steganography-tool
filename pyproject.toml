@@ -1,0 +1,52 @@
+# pyproject.toml
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+# REQUIRED Fields
+name = "file-steg" # The name on PyPI
+version = "1.0.1"  # Start with your initial version (e.g., 1.0.0) - Increment this for updates!
+description = "Hide files in images using LSB steganography and AES-GCM encryption with KDF protection."
+readme = "README.md"
+requires-python = ">=3.7" # Or your actual minimum requirement
+license = { file = "LICENSE" } # Assumes you have a LICENSE file (e.g., with MIT text)
+dependencies = [
+    "Pillow>=9.0.0",        # Or your specific version requirement
+    "cryptography>=38.0.0", # Or your specific version requirement
+]
+
+# RECOMMENDED / Optional Fields
+authors = [
+    {name = "Henry Xue", email = "henryxue225@gmail.com"}, # Optional: Add your email
+]
+keywords = ["steganography", "encryption", "aes", "gcm", "pbkdf2", "lsb", "image", "cli", "apache"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: Apache Software License", # Updated Classifier
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Security :: Cryptography",
+    "Topic :: Multimedia :: Graphics",
+    "Topic :: Utilities",
+]
+
+[project.urls]
+Homepage = "https://github.com/henry0225/file-steg"
+Repository = "https://github.com/henry0225/file-steg"
+Issues = "https://github.com/henry0225/file-steg/issues"
+
+[project.scripts]
+file-steg = "steg:main"
+
+[tool.setuptools]
+py-modules = ["steg"]
